@@ -17,7 +17,7 @@ class ActorDetalle extends StatelessWidget {
             SizedBox(height: 10.0),
             _posterTitulo(context, actor),
             _descripcion(actor),
-            _crearCasting(actor),
+            _crearCasting(context, actor),
           ]),
         )
       ],
@@ -97,7 +97,7 @@ class ActorDetalle extends StatelessWidget {
     );
   }
 
-  Widget _crearCasting(Actor actor) {
+  Widget _crearCasting(BuildContext context, Actor actor) {
     final actoresProvider = new ActoresProvider();
 
     return FutureBuilder(
@@ -119,29 +119,32 @@ class ActorDetalle extends StatelessWidget {
         pageSnapping: false,
         controller: PageController(viewportFraction: 0.3, initialPage: 1),
         itemCount: pelicula.length,
-        itemBuilder: (context, i) => _pelisTarjeta(pelicula[i]),
+        itemBuilder: (context, i) => _pelisTarjeta(pelicula[i], context),
       ),
     );
   }
 
-  Widget _pelisTarjeta(Pelicula pelicula) {
-    return Container(
-        child: Column(
-      children: <Widget>[
-        ClipRRect(
-          borderRadius: BorderRadius.circular(20.0),
-          child: FadeInImage(
-            image: NetworkImage(pelicula.getPosterImg()),
-            placeholder: AssetImage('assets/img/no-image.jpg'),
-            height: 150.0,
-            fit: BoxFit.cover,
+  Widget _pelisTarjeta(Pelicula pelicula, BuildContext context) {
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, 'pelicula', arguments: pelicula),
+      child: Container(
+          child: Column(
+        children: <Widget>[
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20.0),
+            child: FadeInImage(
+              image: NetworkImage(pelicula.getPosterImg()),
+              placeholder: AssetImage('assets/img/no-image.jpg'),
+              height: 150.0,
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
-        Text(
-          pelicula.title,
-          overflow: TextOverflow.ellipsis,
-        )
-      ],
-    ));
+          Text(
+            pelicula.title,
+            overflow: TextOverflow.ellipsis,
+          )
+        ],
+      )),
+    );
   }
 }

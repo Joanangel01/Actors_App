@@ -1,4 +1,4 @@
-#Fri Dec 03 11:33:59 CET 2021
-base.0=/Users/jabo/Documents/GitHub/actors_api/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+#Fri Dec 03 16:26:48 CET 2021
+base.0=/Users/jabo/Documents/GitHub/Actors_App/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

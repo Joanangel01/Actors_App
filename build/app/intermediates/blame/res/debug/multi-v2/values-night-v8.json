@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/jabo/Documents/GitHub/actors_api/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/Users/jabo/Documents/GitHub/Actors_App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/jabo/Documents/GitHub/actors_api/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/Users/jabo/Documents/GitHub/Actors_App/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
